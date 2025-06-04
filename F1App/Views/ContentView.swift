@@ -12,17 +12,17 @@ struct ContentView: View {
         TabView {
             DriverStandingsView()
                 .tabItem {
-                    Label("Home", systemImage: "house")
+                    Label("Drivers", systemImage: "person")
                 }
             
             ConstructorStandingsView()
                 .tabItem {
-                    Label("Profile", systemImage: "person")
+                    Label("Constructors", systemImage: "car.2")
                 }
             
             TracksView()
                 .tabItem {
-                    Label("Settings", systemImage: "gear")
+                    Label("Tracks", systemImage: "arrow.trianglehead.swap")
                 }
         }
     }
