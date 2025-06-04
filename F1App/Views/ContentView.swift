@@ -31,9 +31,9 @@ struct ContentView: View {
         Driver (name: "Verstappen", points: 0, team: "mclaren", position: 20)
     ]
     
-    var years = ["2020", "2021", "2022", "2023", "2024", "2025"]
+//    var years = ["2020", "2019", "2018", "2017", "2016", "2015", "2014", "2013", "2012"]
     
-    var selectedYear: String = "2020"
+//    @State private var selectedYear = "2020"
     
     var body: some View {
         VStack {
@@ -42,12 +42,17 @@ struct ContentView: View {
                 .foregroundColor(.primary)
                 .padding()
         }
-        
-        Menu("\(selectedYear)") {
-            ForEach(years, id: \.self) { year in
-                Text(year)
-            }
-        }
+//        
+//        Picker("Select Year", selection: $selectedYear) {
+//            ForEach(years, id: \.self) { year in
+//                Text(String(year)).tag(year)
+//            }
+//        }
+//        .pickerStyle(InlinePickerStyle()) // Or .menu or .wheel
+//        .padding()
+//            .onChange(of: selectedYear) { newYear in
+//
+//            }
         
         ScrollView{
             ForEach(drivers){ driver in
@@ -85,19 +90,19 @@ struct ContentView: View {
     ContentView()
 }
 
-class Driver: Identifiable{
-    var name: String
-    var points: Int
-    var team: String
-    var position: Int
-    var id = UUID()
-    
-    init(name: String, points: Int, team: String, position: Int) {
-        self.name = name
-        self.points = points
-        self.team = team
-        self.id = UUID()
-        self.position = position
-    }
-}
+//class Driver: Identifiable{
+//    var name: String
+//    var points: Int
+//    var team: String
+//    var position: Int
+//    var id = UUID()
+//    
+////    init(name: String, points: Int, team: String, position: Int) {
+////        self.name = name
+////        self.points = points
+////        self.team = team
+////        self.id = UUID()
+////        self.position = position
+////    }
+//}
 
