@@ -31,20 +31,20 @@ struct DriverStandingsView: View {
             //
             //            }
             
-            ScrollView{
-                ForEach(drivers){ driver in
+            List{
+                ForEach(driverStandings){ driver in
                     HStack (alignment: .center) {
                         Text("\(driver.position)")
                             .font(.title)
                             .frame(width: 40)
                         
-                        Text("\(driver.name)")
+                        Text("\(driver.driver.name)")
                             .font(.title)
                             .padding(.leading, 10)
                         
                         Spacer()
                         
-                        Image(driver.team)
+                        Image(driver.driver.team)
                             .resizable()
                             .frame(width: 30, height: 30)
                             .padding(.trailing, 10)
@@ -53,13 +53,9 @@ struct DriverStandingsView: View {
                             .font(.title)
                             .frame(width: 55, alignment: .trailing)
                     }
-                    .padding(.top, 5)
-                    
-                    Divider()
                 }
-                .padding(.trailing, 10)
             }
-            .padding()
+            .listStyle(.inset)
         }
     }
 }
